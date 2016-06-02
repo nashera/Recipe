@@ -46,5 +46,6 @@ int main(int argc, char const *argv[])
 	{
 		printf("%d\t", *(a + i));
 	}
+	printf("\n");
 	return 0;
 }
