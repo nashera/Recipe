@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+
 void merge(int *a, int first, int mid, int last){
 	int *tmp = (int *)malloc((last - first + 1) * sizeof(int));
 	int k = 0;

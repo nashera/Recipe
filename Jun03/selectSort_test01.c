@@ -18,7 +18,7 @@ void selectSort(int *a, int length){
 	if(ix != 0){
 		swap(a, a + ix);
 	}
-	if (length > 2)
+	if (length > 0)
 	{
 		selectSort(a + 1, length -1);
 	}
@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 	int a[] = {2, 1, 3, 5, 7, 6, 8, 9, 10, 2, 4};
 	selectSort(a, sizeof(a) / sizeof(int));
 
-	for (int i = 0; i < sizeof(a) / sizeof(int); ++i)
+	for (unsigned int i = 0; i < sizeof(a) / sizeof(int); ++i)
 	{
 		printf("%d\t", *(a + i));
 	}

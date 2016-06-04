@@ -1,0 +1,60 @@
+sublime text 3中文版(代码编辑器)学习总结
+
+2016-03-17 前端攻城狮
+1、Goto打开命令框（Ctrl+p）
+1）查文件，输入：index.html（也可以是view/index.html）支持模糊匹配
+2）css文件查找，输入：@body（也可以wp-content/theme/style@body）
+3）js文件查找，输入：@func（查找函数名）
+4）查找行号，输入：“：20”
+5）页面内匹配，输入：#body（匹配body标记）
+
+2、Find菜单多行游标
+1）Ctrl+d单词选择产生多行游标，使用 Ctrl+D 选择词的过程中可以使用 Ctrl+K、Ctrl+D 跳过
+2）Ctrl+d选择第一个，然后Alt+F3多行选择产生多行游标
+3）Ctrl+a选择全部，Ctrl+Shift+l也可以产生多行游标
+4）Shift+鼠标右键 拖动产生多行游标
+3、Tools命令模式
+通过命令模式设置文件语法模式，如输入：set syntax:javascript – 设置为js文件；minmap显示隐藏右边的min代码显示区域
+4、Package Control安装
+在sublime菜单View->Show Console打开控制台，输入如下代码：
+SUBLIME TEXT 3-版本import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+或者
+SUBLIME TEXT 2-版本import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')
+然后Enter，完成PackageControl的安装，可以在Preferences->PackageControl打开PackageControl命令模式，通过PackageControl可以直接安装sublime主题，如输入：theme soda；插件，如输入：html5等；
+
+
+5、常用插件
+1.Emment插件（推荐），前端编码神器
+1）输入“！”，然后Ctrl+e立即生成html5格式代码
+2）ul>.item$*10，生成<ul>标签和10个class=’item’的<li>
+3）h2{this is title}，然后Ctrl+e生成<h2>this is title</h2>
+
+2.JavaScript & NodeJS Snippets插件（推荐），js和node.js编辑器
+
+1）常用的getElementById函数提示
+
+2）简写模式，如输入gi，tab后变成document.getElementById(‘id’);具体参考https://packagecontrol.io/packages/JavaScript%20%26%20NodeJS%20Snippets
+
+
+
+
+附：
+
+1.DocBlockr插件（推荐），快速添加注释
+
+
+2.advanceNewfile插件（推荐），Ctrl+Alt+n快速创建文件，如：public/css/style.css
+
+
+3.httpRequest，js后端程序编写插件
+
+
+4.Nettus Fetch管理插件，是下载的插件为最新的代码，其实也挺麻烦的
+
+
+5.sidebarEnhancement插件，增强右键功能，如右键文件->在浏览器中打开
+
+
+6.sublimeLinter插件，使用lint进行语法及风格校验，这个了解不多
+
+

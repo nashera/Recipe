@@ -1,3 +1,4 @@
+```c
 #include <stdio.h>
 #include <stdlib.h>
 void quickSort(int *a, int length){
@@ -55,3 +56,4 @@ int main(int argc, char const *argv[])
 	printf("\n");
 	return 0;
 }
+```
